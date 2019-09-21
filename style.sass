@@ -1,0 +1,214 @@
+$primary-color: #5a1113
+$secondary-color: #131313
+$third-color: #dedede
+
+$primary-text-color: white
+$secondary-text-color: #4d4d4d
+
+$small: 480px
+$medium: 800px
+
+
+
+$break-small: 480px
+$break-large: 800px
+
+
+@mixin respond-to($media) 
+	@if $media == handhelds 
+		@media only screen and (max-width: $break-small) 
+			@content
+
+	@else if $media == medium-screens 
+		@media only screen and (min-width: $break-small + 1) and (max-width: $break-large - 1) 
+			@content
+
+	@else if $media == wide-screens 
+		@media only screen and (min-width: $break-large) 
+			@content
+  
+
+
+body
+	font-family: arial
+
+
+	background-color: blue
+@media only screen and (max-width: $medium)
+	body
+		background-color: green
+@media only screen and (max-width: $small)
+	body
+		background-color: red
+
+
+/*-----------------------------------------------header start ----------------------------------------*/
+
+#logocontainer
+	background-color: $primary-color
+	padding: 15px
+
+	a
+		display: flex
+		justify-content: space-between
+		align-items: center
+
+.navcontainer
+	background-color: $secondary-color
+
+	ul
+		list-style-type: none
+		display: flex
+		justify-content: flex-start
+		@include respond-to(handhelds)
+			justify-content: center
+		@include respond-to(medium-screens)
+			justify-content: center
+		margin: 0
+		padding: 0
+
+		a 
+			display: block
+			color: $primary-text-color
+			padding: 10px
+			text-decoration: none
+			font-size: 1.2em
+
+		li a:hover
+			background-color: $third-color
+
+#date
+	display: flex
+	justify-content: flex-end
+	margin: 5px 10px
+
+/* --------------------------------------------header end ---------------------------------------------*/
+
+/*---------------------------------------------main start----------------------------------------------*/
+
+main
+	width: 90%
+	margin: 0 auto
+
+h1
+	background-color: $third-color
+	color: $secondary-text-color
+	font-size: 1.5em
+	font-weight: normal
+	padding-left: 5px
+
+/*--------------------------------------------- Image-Layout start-----------------------*/
+
+.wrapper
+	display: flex
+	justify-content: space-between
+
+	.container
+		width: 85%
+		padding-top: 0
+		padding-right: 30px
+		
+		.row
+			display: flex
+			justify-content: space-between
+
+		.img/*image 3x2 Layout*/							
+			width: 30%
+			background-color: $secondary-color
+
+			a:hover
+				opacity: 0.3
+			a
+				color: $primary-text-color
+				text-decoration: none
+
+		.img2/*image 2x2 Layout*/
+			width: 46%
+			background-color: $secondary-color
+			color: $primary-text-color
+			
+			h2
+				font-size: 1.3em
+				font-weight: normal
+				padding-left: 3px
+
+			img
+				width: 100%
+
+			a:hover
+				opacity: 0.3
+			a
+				color: $primary-text-color
+				text-decoration: none
+
+	#row2_1/*margin between the two rows in 2x2 Layout*/
+		margin-bottom: 20px
+
+	#bannerarticle
+		width: 14%
+		padding: 0
+
+		img
+			height: 100%
+	
+	h2
+		font-size: 1em
+		font-weight: normal
+		padding-left: 3px
+
+	img
+		width: 100%
+
+#banner_developer
+	width: 100%
+	margin: 20px auto
+	text-align: center
+
+/*--------------------------------------------Image Layout/Main End-------------------------*/
+/*--------------------------------------------Footer Start--------------------------------*/
+
+footer
+	margin-top: 20px
+	background-color: $secondary-color
+
+	#navlinksfooter
+		font-size: 1em
+
+	#footerlogo
+		@include respond-to(handhelds)
+			text-align: center
+		@include respond-to(medium-screens)
+			text-align: center
+		@include respond-to(wide-screens)
+			text-align: right
+			padding-right: 10px		
+
+	p
+		color: $primary-text-color
+		text-align: center
+		padding-bottom: 5px
+		font-size: 0.8em
+/*--------------------------------------------Footer End--------------------------------------*/
+/*--------------------------------------------Mobile------------------------------------------*/
+
+#bannerheader
+	@include respond-to(handhelds)
+			display: none
+	@include respond-to(medium-screens)
+			display: none
+
+
+.containermobile
+	display: flex
+	justify-content: space-between
+	width: $small
+
+	.img							
+		width: 45%
+		background-color: $secondary-color
+
+		a:hover
+			opacity: 0.3
+		a
+			color: $primary-text-color
+			text-decoration: none

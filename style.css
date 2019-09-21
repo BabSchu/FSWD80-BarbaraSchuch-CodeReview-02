@@ -1,0 +1,159 @@
+body {
+  font-family: arial;
+  background-color: blue; }
+
+@media only screen and (max-width: 800px) {
+  body {
+    background-color: green; } }
+@media only screen and (max-width: 480px) {
+  body {
+    background-color: red; } }
+/*-----------------------------------------------header start ---------------------------------------- */
+#logocontainer {
+  background-color: #5a1113;
+  padding: 15px; }
+  #logocontainer a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+
+.navcontainer {
+  background-color: #131313; }
+  .navcontainer ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0; }
+    @media only screen and (max-width: 480px) {
+      .navcontainer ul {
+        justify-content: center; } }
+    @media only screen and (min-width: 481px) and (max-width: 799px) {
+      .navcontainer ul {
+        justify-content: center; } }
+    .navcontainer ul a {
+      display: block;
+      color: white;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 1.2em; }
+    .navcontainer ul li a:hover {
+      background-color: #dedede; }
+
+#date {
+  display: flex;
+  justify-content: flex-end;
+  margin: 5px 10px; }
+
+/* --------------------------------------------header end --------------------------------------------- */
+/*---------------------------------------------main start---------------------------------------------- */
+main {
+  width: 90%;
+  margin: 0 auto; }
+
+h1 {
+  background-color: #dedede;
+  color: #4d4d4d;
+  font-size: 1.5em;
+  font-weight: normal;
+  padding-left: 5px; }
+
+/*--------------------------------------------- Image-Layout start----------------------- */
+.wrapper {
+  display: flex;
+  justify-content: space-between; }
+  .wrapper .container {
+    width: 85%;
+    padding-top: 0;
+    padding-right: 30px; }
+    .wrapper .container .row {
+      display: flex;
+      justify-content: space-between; }
+    .wrapper .container .img {
+      width: 30%;
+      background-color: #131313; }
+      .wrapper .container .img a:hover {
+        opacity: 0.3; }
+      .wrapper .container .img a {
+        color: white;
+        text-decoration: none; }
+    .wrapper .container .img2 {
+      width: 46%;
+      background-color: #131313;
+      color: white; }
+      .wrapper .container .img2 h2 {
+        font-size: 1.3em;
+        font-weight: normal;
+        padding-left: 3px; }
+      .wrapper .container .img2 img {
+        width: 100%; }
+      .wrapper .container .img2 a:hover {
+        opacity: 0.3; }
+      .wrapper .container .img2 a {
+        color: white;
+        text-decoration: none; }
+  .wrapper #row2_1 {
+    margin-bottom: 20px; }
+  .wrapper #bannerarticle {
+    width: 14%;
+    padding: 0; }
+    .wrapper #bannerarticle img {
+      height: 100%; }
+  .wrapper h2 {
+    font-size: 1em;
+    font-weight: normal;
+    padding-left: 3px; }
+  .wrapper img {
+    width: 100%; }
+
+#banner_developer {
+  width: 100%;
+  margin: 20px auto;
+  text-align: center; }
+
+/*--------------------------------------------Image Layout/Main End------------------------- */
+/*--------------------------------------------Footer Start-------------------------------- */
+footer {
+  margin-top: 20px;
+  background-color: #131313; }
+  footer #navlinksfooter {
+    font-size: 1em; }
+  @media only screen and (max-width: 480px) {
+    footer #footerlogo {
+      text-align: center; } }
+  @media only screen and (min-width: 481px) and (max-width: 799px) {
+    footer #footerlogo {
+      text-align: center; } }
+  @media only screen and (min-width: 800px) {
+    footer #footerlogo {
+      text-align: right;
+      padding-right: 10px; } }
+  footer p {
+    color: white;
+    text-align: center;
+    padding-bottom: 5px;
+    font-size: 0.8em; }
+
+/*--------------------------------------------Footer End-------------------------------------- */
+/*--------------------------------------------Mobile------------------------------------------ */
+@media only screen and (max-width: 480px) {
+  #bannerheader {
+    display: none; } }
+@media only screen and (min-width: 481px) and (max-width: 799px) {
+  #bannerheader {
+    display: none; } }
+
+.containermobile {
+  display: flex;
+  justify-content: space-between;
+  width: 480px; }
+  .containermobile .img {
+    width: 45%;
+    background-color: #131313; }
+    .containermobile .img a:hover {
+      opacity: 0.3; }
+    .containermobile .img a {
+      color: white;
+      text-decoration: none; }
+
+/*# sourceMappingURL=style.css.map */
