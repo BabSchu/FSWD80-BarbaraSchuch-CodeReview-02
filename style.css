@@ -80,6 +80,11 @@ h1 {
       .wrapper .container .img a {
         color: white;
         text-decoration: none; }
+      .wrapper .container .img h2 {
+        font-size: 0.8em; }
+        @media only screen and (min-width: 481px) and (max-width: 799px) {
+          .wrapper .container .img h2 {
+            font-size: 0.7em; } }
     .wrapper .container .img2 {
       width: 46%;
       background-color: #131313;
@@ -183,7 +188,7 @@ h1 {
   .img img {
     width: 100%; }
   .img h2 {
-    font-size: 0.7em;
+    font-size: 0.6em;
     padding: 0 5px; }
 
 .mobilerow {
