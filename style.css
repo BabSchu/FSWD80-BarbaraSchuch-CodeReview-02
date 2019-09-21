@@ -1,13 +1,12 @@
 body {
-  font-family: arial;
-  background-color: blue; }
+  font-family: arial; }
 
-@media only screen and (max-width: 800px) {
-  body {
-    background-color: green; } }
-@media only screen and (max-width: 480px) {
-  body {
-    background-color: red; } }
+/* @include respond-to(handhelds)
+ * 	background-color: red
+ * @include respond-to(medium-screens)
+ * 	background-color: green
+ * @include respond-to(wide-screens)
+ * 	background-color: blue                       Responsive Test ------------------------------- */
 /*-----------------------------------------------header start ---------------------------------------- */
 #logocontainer {
   background-color: #5a1113;
@@ -46,7 +45,7 @@ body {
   margin: 5px 10px; }
 
 /* --------------------------------------------header end --------------------------------------------- */
-/*---------------------------------------------main start---------------------------------------------- */
+/*---------------------------------------------main widecreen start------------------------------------ */
 main {
   width: 90%;
   margin: 0 auto; }
@@ -66,6 +65,10 @@ h1 {
     width: 85%;
     padding-top: 0;
     padding-right: 30px; }
+    @media only screen and (min-width: 481px) and (max-width: 799px) {
+      .wrapper .container {
+        width: 100%;
+        padding-right: 0px; } }
     .wrapper .container .row {
       display: flex;
       justify-content: space-between; }
@@ -97,6 +100,9 @@ h1 {
   .wrapper #bannerarticle {
     width: 14%;
     padding: 0; }
+    @media only screen and (min-width: 481px) and (max-width: 799px) {
+      .wrapper #bannerarticle {
+        display: none; } }
     .wrapper #bannerarticle img {
       height: 100%; }
   .wrapper h2 {
@@ -107,11 +113,13 @@ h1 {
     width: 100%; }
 
 #banner_developer {
-  width: 100%;
+  width: 80%;
   margin: 20px auto;
   text-align: center; }
+  #banner_developer img {
+    width: 100%; }
 
-/*--------------------------------------------Image Layout/Main End------------------------- */
+/*-------------------------------------Image Layout/Main Widescreen End------------------------- */
 /*--------------------------------------------Footer Start-------------------------------- */
 footer {
   margin-top: 20px;
@@ -135,7 +143,18 @@ footer {
     font-size: 0.8em; }
 
 /*--------------------------------------------Footer End-------------------------------------- */
-/*--------------------------------------------Mobile------------------------------------------ */
+/*--------------------------------------------Mobile Start--------------------------------------- */
+@media only screen and (max-width: 480px) {
+  #widescreen {
+    display: none; } }
+
+@media only screen and (min-width: 481px) and (max-width: 799px) {
+  #mobile {
+    display: none; } }
+@media only screen and (min-width: 800px) {
+  #mobile {
+    display: none; } }
+
 @media only screen and (max-width: 480px) {
   #bannerheader {
     display: none; } }
@@ -143,17 +162,55 @@ footer {
   #bannerheader {
     display: none; } }
 
-.containermobile {
+#mobile {
+  margin-left: 20px; }
+
+h1 {
+  background-color: #dedede;
+  color: #4d4d4d;
+  font-size: 1.5em;
+  font-weight: normal;
+  padding-left: 5px; }
+
+.img {
+  width: 47%;
+  background-color: #131313; }
+  .img a:hover {
+    opacity: 0.3; }
+  .img a {
+    color: white;
+    text-decoration: none; }
+  .img img {
+    width: 100%; }
+  .img h2 {
+    font-size: 0.7em;
+    padding: 0 5px; }
+
+.mobilerow {
   display: flex;
   justify-content: space-between;
-  width: 480px; }
-  .containermobile .img {
-    width: 45%;
-    background-color: #131313; }
-    .containermobile .img a:hover {
-      opacity: 0.3; }
-    .containermobile .img a {
-      color: white;
-      text-decoration: none; }
+  margin-bottom: 15px; }
+
+#bannermobile {
+  height: 100%;
+  object-fit: cover; }
+
+/*--------------------------------------------Mobile End--------------------------------------- */
+/*-------------------------------------------page Culture Start------------------------------------------ */
+#culture .wrapper .container {
+  padding-right: 0;
+  margin: 0 auto; }
+
+.rowflexgrow {
+  margin-top: 10px; }
+  .rowflexgrow div:nth-of-type(1) {
+    flex-grow: 1;
+    margin-right: 10px; }
+    .rowflexgrow div:nth-of-type(1) h2 {
+      margin-top: 20px; }
+  .rowflexgrow div:nth-of-type(2) {
+    flex-grow: 2; }
+
+/*-------------------------------------------page Culture End------------------------------------------ */
 
 /*# sourceMappingURL=style.css.map */
